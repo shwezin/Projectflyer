@@ -1,16 +1,14 @@
-@if(session()->has('flash_messae'))
 
+@if (session()->has('flash_message'))
 
-<script type="text/javascript">
-
+<script>
 	swal({
-		title: "{{ session('flash_message.title') }}",
-		text: "{{ session('flash_message') }}",
+		title: "Error!",
+		text: "Here's my error message!",
 		type: "info",
-		timer: 1700,
- 		showConfirmButton: false
+		timer: 2000,
+		showConfirmButton: false
 	});
-
 </script>
 
 @endif

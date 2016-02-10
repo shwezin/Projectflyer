@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 
 	namespace App\Http;
@@ -21,3 +22,16 @@
 	//$flash->success()
 
  ?>
+=======
+<?php
+
+namespace App\Http;
+
+class Flash
+{
+	public function message($message)
+	{
+		session()->flash('flash_message',$message);
+	}
+}
+>>>>>>> a90c3c10c32f413b18963fa6aa6f5e4029d48ca0
