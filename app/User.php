@@ -2,10 +2,8 @@
 
 namespace App;
 
-<<<<<<< HEAD
 use Illuminate\Foundation\Auth\User as Authenticatable;
-=======
->>>>>>> a90c3c10c32f413b18963fa6aa6f5e4029d48ca0
+
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Foundation\Auth\Access\Authorizable;
@@ -15,34 +13,21 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Jenssegers\Mongodb\Model as Moloquent;
 
 class User extends Moloquent implements
-<<<<<<< HEAD
-    AuthenticatableContract,
-    AuthorizableContract,
-    CanResetPasswordContract
-{
-    use Authenticatable, Authorizable, CanResetPassword;
-=======
 AuthenticatableContract,
 AuthorizableContract,
 CanResetPasswordContract
 {
     use Authenticatable, CanResetPassword, Authorizable;
->>>>>>> a90c3c10c32f413b18963fa6aa6f5e4029d48ca0
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-<<<<<<< HEAD
-    // public $incrementing = false;
 
-     public function flyers()
-    {
-        //return $this->embedsMany(Flyer::class);
-=======
+    // public $incrementing = false;
     public function flyers()
     {
->>>>>>> a90c3c10c32f413b18963fa6aa6f5e4029d48ca0
+        //return $this->embedsMany(Flyer::class);
         return $this->hasMany(Flyer::class);
     }
 

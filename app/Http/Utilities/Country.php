@@ -1,20 +1,12 @@
-<<<<<<< HEAD
-<?php 
-=======
 <?php
->>>>>>> a90c3c10c32f413b18963fa6aa6f5e4029d48ca0
 
 namespace App\Http\Utilities;
 
 class Country
 {
-<<<<<<< HEAD
 
-	protected static $countries = [
-=======
 	protected static $countries =
 	[
->>>>>>> a90c3c10c32f413b18963fa6aa6f5e4029d48ca0
 	"United States"                                => "us",
 	"Afghanistan"                                  => "af",
 	"Albania"                                      => "al",
@@ -258,14 +250,7 @@ class Country
 
 	public static function all()
 	{
-<<<<<<< HEAD
-		return array_keys(static::$countries);
-	}
-}
 
-?>
-=======
 		return static::$countries;
 	}
 }
->>>>>>> a90c3c10c32f413b18963fa6aa6f5e4029d48ca0

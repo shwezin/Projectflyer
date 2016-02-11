@@ -24,7 +24,6 @@ class FlyerRequest extends Request
     public function rules()
     {
         return [
-<<<<<<< HEAD
             'street'        =>  'required',
             'city'          =>  'required',
             'zip'           =>  'required',
@@ -35,15 +34,3 @@ class FlyerRequest extends Request
         ];
     }
 }
-=======
-        'street'        => 'required',
-        'city'          => 'required',
-        'zip'           => 'required',
-        'country'       => 'required',
-        'state'         => 'required',
-        'price'         => 'required',
-        'description'   => 'required|integer',
-        ];
-    }
-}
->>>>>>> a90c3c10c32f413b18963fa6aa6f5e4029d48ca0

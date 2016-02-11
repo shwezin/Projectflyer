@@ -12,7 +12,7 @@ class FlyerController extends Controller
 {
 	public function create()
 	{
-		flash('Hello World');
+		flash()->overlay('Success', 'Your flyer has been created');
 		
 		return view('flyers.create');
 	}
@@ -22,7 +22,19 @@ class FlyerController extends Controller
 		Flyer::create($request->all());
 
 		// session()->flash('flash_message','Flyer successfully created!');
-		flash('Flyer successfully created!');
+		//flash('Success', 'Your flyer has been created');
+
+		flash()->success('Success!', 'Your flyer has been created.');
+
 		return redirect()->back();
+	}
+
+	public function show($zip, $street)
+	{
+
+		$street = str_replace('-', ' ', $street);
+
+		return Flyer::locatedAt($zip, $street)->first();
+		//return Flyer::where(compact('zip', 'street'))->first();
 	}
 }

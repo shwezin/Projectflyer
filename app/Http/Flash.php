@@ -1,37 +1,41 @@
-<<<<<<< HEAD
-<?php 
-
-	namespace App\Http;
-
-
-	class Flash	{
-		
-		public function message($title, $message)
-		{
-			session()->flash('flash_message', [
-					'title'		=> $title,
-					'message'	=> $message
-				]);
-		}
-	}
-
-	//$flash->message('hello there');
-	//$flash->error('')
-	//$flash->aside()
-	//$flash->overlay()
-	//$flash->success()
-
- ?>
-=======
 <?php
 
 namespace App\Http;
 
 class Flash
 {
-	public function message($message)
+
+	public function create($title, $message, $level, $key = 'flash_message')
 	{
-		session()->flash('flash_message',$message);
+		return session()->flash($key,[
+
+				'title'		=> $title,
+				'message'	=> $message,
+				'level'		=> $level
+			]);
 	}
+
+	public function info($title, $message)
+	{
+		return $this->create($title, $message, 'info');
+
+	}
+
+	public function success($title, $message)
+	{
+		return $this->create($title, $message, 'success');
+	}
+
+	public function error($title, $message)
+	{
+		return $this->create($title, $message, 'error');
+	}
+
+
+	public function overlay ($title, $message, $level = 'success')
+	{
+		return $this->create($title, $message, $level, 'flash_message_overlay');
+	}
+
+	// public function __call($level, $args)
 }
->>>>>>> a90c3c10c32f413b18963fa6aa6f5e4029d48ca0
